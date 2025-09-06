@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - FaceRecog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="recognition.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html"><h2>FaceRecog</h2></a>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <button class="btn-outline" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="recognition-container">
+        <div class="recognition-header">
+            <h1>Admin Panel - Add Known Faces</h1>
+        </div>
+
+        <div class="admin-section">
+            <div class="add-face-form">
+                <h3>Add New Person to Database</h3>
+                
+                <div class="form-group">
+                    <label for="personName">Person Name</label>
+                    <input type="text" id="personName" placeholder="Enter full name" required>
+                </div>
+                
+                <div class="upload-area" id="adminUploadArea">
+                    <div class="upload-content">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <h3>Upload person's photo</h3>
+                        <p>Clear face photo for best results</p>
+                    </div>
+                    <input type="file" id="adminFileInput" accept=".jpg,.jpeg,.png" hidden>
+                </div>
+                
+                <div class="image-preview" id="adminImagePreview" style="display: none;">
+                    <img id="adminPreviewImg" alt="Preview">
+                    <div class="image-actions">
+                        <button class="btn-primary" onclick="addPersonToDatabase()">Add to Database</button>
+                        <button class="btn-outline" onclick="clearAdminImage()">Clear</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="known-faces-list">
+                <h3>Known Faces Database</h3>
+                <div id="knownFacesList" class="faces-grid">
+                    <!-- Known faces will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:5000/api';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            setupAdminUpload();
+            loadKnownFaces();
+        });
+        
+        function setupAdminUpload() {
+            const uploadArea = document.getElementById('adminUploadArea');
+            const fileInput = document.getElementById('adminFileInput');
+            
+            uploadArea.addEventListener('click', () => fileInput.click());
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleAdminFileSelect(files[0]);
+                }
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleAdminFileSelect(e.target.files[0]);
+                }
+            });
+        }
+        
+        function handleAdminFileSelect(file) {
+            if (!file.type.match('image.*')) {
+                showMessage('Please select a valid image file', 'error');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const previewImg = document.getElementById('adminPreviewImg');
+                previewImg.src = e.target.result;
+                
+                document.getElementById('adminImagePreview').style.display = 'block';
+                document.getElementById('adminUploadArea').style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        function clearAdminImage() {
+            document.getElementById('adminImagePreview').style.display = 'none';
+            document.getElementById('adminUploadArea').style.display = 'block';
+            document.getElementById('adminFileInput').value = '';
+            document.getElementById('personName').value = '';
+        }
+        
+        async function addPersonToDatabase() {
+            const name = document.getElementById('personName').value.trim();
+            const img = document.getElementById('adminPreviewImg');
+            
+            if (!name) {
+                showMessage('Please enter person name', 'error');
+                return;
+            }
+            
+            if (!img.src) {
+                showMessage('Please select an image', 'error');
+                return;
+            }
+            
+            showMessage('Adding person to database...', 'info');
+            
+            try {
+                const base64Image = await getBase64FromImage(img);
+                
+                const response = await fetch(`${API_BASE_URL}/add_face`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        image: base64Image,
+                        name: name
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showMessage(`${name} added successfully!`, 'success');
+                    clearAdminImage();
+                    loadKnownFaces(); // Refresh the list
+                } else {
+                    showMessage(data.error || 'Failed to add person', 'error');
+                }
+            } catch (error) {
+                showMessage('Error connecting to server', 'error');
+                console.error('Add face error:', error);
+            }
+        }
+        
+        async function loadKnownFaces() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/known_faces`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayKnownFaces(data.faces);
+                }
+            } catch (error) {
+                console.error('Error loading known faces:', error);
+            }
+        }
+        
+        function displayKnownFaces(faces) {
+            const container = document.getElementById('knownFacesList');
+            
+            if (faces.length === 0) {
+                container.innerHTML = '<p style="color: #b0b0b0; text-align: center;">No faces in database yet</p>';
+                return;
+            }
+            
+            container.innerHTML = faces.map(face => `
+                <div class="face-card">
+                    <div class="face-info">
+                        <h4>${face.name}</h4>
+                        <p>ID: ${face.id}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function getBase64FromImage(img) {
+            return new Promise((resolve) => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/jpeg', 0.8));
+            });
+        }
+        
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.href = 'index.html';
+        }
+        
+        function showMessage(message, type) {
+            const existingMessage = document.querySelector('.message');
+            if (existingMessage) existingMessage.remove();
+            
+            const messageEl = document.createElement('div');
+            messageEl.className = `message ${type}`;
+            messageEl.textContent = message;
+            
+            messageEl.style.cssText = `
+                position: fixed;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 1rem 2rem;
+                border-radius: 10px;
+                color: white;
+                font-weight: 500;
+                z-index: 1000;
+                animation: slideDown 0.3s ease;
+                ${type === 'success' ? 'background: #10b981;' : ''}
+                ${type === 'error' ? 'background: #ef4444;' : ''}
+                ${type === 'info' ? 'background: #3b82f6;' : ''}
+            `;
+            
+            document.body.appendChild(messageEl);
+            
+            setTimeout(() => {
+                messageEl.style.animation = 'slideUp 0.3s ease';
+                setTimeout(() => messageEl.remove(), 300);
+            }, 3000);
+        }
+    </script>
+    
+    <style>
+        .admin-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .add-face-form,
+        .known-faces-list {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+        
+        .add-face-form h3,
+        .known-faces-list h3 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+        }
+        
+        .faces-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .face-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .face-card h4 {
+            color: #ffffff;
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .face-card p {
+            color: #b0b0b0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .admin-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</body>
+</html>

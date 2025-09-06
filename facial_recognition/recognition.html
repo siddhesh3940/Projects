@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition - FaceRecog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="recognition.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html"><h2>FaceRecog</h2></a>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <button class="btn-outline" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="recognition-container">
+        <div class="recognition-header">
+            <h1>Face Recognition</h1>
+            <div class="mode-toggle">
+                <button class="mode-btn active" onclick="switchMode('upload')">Upload Image</button>
+                <button class="mode-btn" onclick="switchMode('camera')">Live Camera</button>
+                <button class="mode-btn" onclick="switchMode('compare')">Compare Images</button>
+            </div>
+        </div>
+
+        <!-- Upload Mode -->
+        <div id="upload-mode" class="recognition-mode active">
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <h3>Drop your image here</h3>
+                        <p>or click to browse</p>
+                        <span class="file-types">Supports JPG, PNG, JPEG</span>
+                    </div>
+                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden>
+                </div>
+                
+                <div class="image-preview" id="imagePreview" style="display: none;">
+                    <img id="previewImg" alt="Preview">
+                    <div class="image-actions">
+                        <button class="btn-primary" onclick="processImage()">Analyze Face</button>
+                        <button class="btn-outline" onclick="clearImage()">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Camera Mode -->
+        <div id="camera-mode" class="recognition-mode">
+            <div class="camera-section">
+                <div class="camera-container">
+                    <video id="cameraVideo" autoplay muted></video>
+                    <canvas id="cameraCanvas" style="display: none;"></canvas>
+                    <div class="camera-overlay" id="cameraOverlay"></div>
+                </div>
+                
+                <div class="camera-controls">
+                    <button class="btn-primary" id="startCamera" onclick="startCamera()">Start Camera</button>
+                    <button class="btn-outline" id="captureBtn" onclick="captureImage()" style="display: none;">Capture & Analyze</button>
+                    <button class="btn-outline" id="stopCamera" onclick="stopCamera()" style="display: none;">Stop Camera</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compare Mode -->
+        <div id="compare-mode" class="recognition-mode">
+            <div class="compare-section">
+                <div class="compare-images">
+                    <div class="compare-item">
+                        <h3>Image 1</h3>
+                        <div class="upload-area small" onclick="selectCompareImage(1)">
+                            <span>Click to upload</span>
+                            <img id="compareImg1" style="display: none;">
+                        </div>
+                    </div>
+                    
+                    <div class="compare-result">
+                        <div class="vs-indicator">VS</div>
+                        <div class="match-result" id="matchResult" style="display: none;">
+                            <div class="match-percentage">0%</div>
+                            <div class="match-status">No Match</div>
+                        </div>
+                    </div>
+                    
+                    <div class="compare-item">
+                        <h3>Image 2</h3>
+                        <div class="upload-area small" onclick="selectCompareImage(2)">
+                            <span>Click to upload</span>
+                            <img id="compareImg2" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn-primary" onclick="compareImages()" id="compareBtn" style="display: none;">Compare Faces</button>
+            </div>
+        </div>
+
+        <!-- Results Panel -->
+        <div class="results-panel" id="resultsPanel" style="display: none;">
+            <h3>Recognition Results</h3>
+            <div class="detection-results" id="detectionResults"></div>
+        </div>
+    </main>
+
+    <input type="file" id="compareInput1" accept=".jpg,.jpeg,.png" style="display: none;">
+    <input type="file" id="compareInput2" accept=".jpg,.jpeg,.png" style="display: none;">
+
+    <script src="recognition.js"></script>
+</body>
+</html>

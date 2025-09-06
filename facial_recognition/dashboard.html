@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FaceRecog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>FaceRecog</h2>
+            </div>
+            <div class="nav-links">
+                <div class="user-menu">
+                    <span class="user-name" id="userName">John Doe</span>
+                    <button class="btn-outline" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="dashboard-sidebar">
+            <div class="sidebar-menu">
+                <a href="#" class="menu-item active" onclick="showSection('overview')">
+                    <span>📊</span> Overview
+                </a>
+                <a href="#" class="menu-item" onclick="showSection('recognition')">
+                    <span>🔍</span> Face Recognition
+                </a>
+                <a href="#" class="menu-item" onclick="showSection('history')">
+                    <span>📋</span> History
+                </a>
+                <a href="#" class="menu-item" onclick="showSection('profile')">
+                    <span>👤</span> Profile
+                </a>
+                <a href="admin.html" class="menu-item" id="adminLink" style="display: none;">
+                    <span>⚙️</span> Add Faces
+                </a>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div id="overview" class="content-section active">
+                <h1>Welcome Back!</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Recognitions</h3>
+                        <p class="stat-number">127</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>This Month</h3>
+                        <p class="stat-number">23</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Success Rate</h3>
+                        <p class="stat-number">98.5%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="recognition" class="content-section">
+                <h1>Face Recognition</h1>
+                <div class="recognition-options">
+                    <button class="btn-primary" onclick="startCamera()">
+                        📷 Use Camera
+                    </button>
+                    <button class="btn-outline" onclick="uploadPhoto()">
+                        📁 Upload Photo
+                    </button>
+                </div>
+            </div>
+
+            <div id="history" class="content-section">
+                <h1>Recognition History</h1>
+                <div class="history-list">
+                    <div class="history-item">
+                        <div class="history-info">
+                            <h4>Recognition #127</h4>
+                            <p>Success • 2 minutes ago</p>
+                        </div>
+                        <span class="status success">✓</span>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-info">
+                            <h4>Recognition #126</h4>
+                            <p>Success • 1 hour ago</p>
+                        </div>
+                        <span class="status success">✓</span>
+                    </div>
+                    <div class="history-item">
+                        <div class="history-info">
+                            <h4>Recognition #125</h4>
+                            <p>Failed • 2 hours ago</p>
+                        </div>
+                        <span class="status failed">✗</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="profile" class="content-section">
+                <h1>Profile Settings</h1>
+                <div class="profile-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" value="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <input type="text" value="User" readonly>
+                    </div>
+                    <button class="btn-primary">Update Profile</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
