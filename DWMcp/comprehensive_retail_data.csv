@@ -1,0 +1,51 @@
+TransactionID,CustomerID,ProductID,ProductName,Category,Subcategory,Brand,Quantity,UnitPrice,TotalAmount,Discount,TransactionDate,PaymentMethod,Channel,CustomerAge,CustomerGender,CustomerCity,CustomerSegment,Year,Month,DayOfWeek,Season
+T000001,C00001,P00001,Smartphones Item 1,Electronics,Smartphones,Brand_A,1,899.99,899.99,0.0,2023-01-15,Credit Card,Online,32,Female,New York,Premium,2023,1,Sunday,Winter
+T000002,C00002,P00045,Mens Wear Item 2,Clothing,Mens Wear,Brand_B,2,79.99,159.98,10.0,2023-01-16,Debit Card,In-Store,28,Male,Los Angeles,Regular,2023,1,Monday,Winter
+T000003,C00003,P00089,Kitchen Item 1,Home & Garden,Kitchen,Brand_C,1,149.99,149.99,0.0,2023-01-17,Credit Card,Online,45,Female,Chicago,Premium,2023,1,Tuesday,Winter
+T000004,C00001,P00156,Fiction Item 1,Books & Media,Fiction,Brand_A,3,24.99,74.97,5.0,2023-01-18,Digital Wallet,Online,32,Female,New York,Premium,2023,1,Wednesday,Winter
+T000005,C00004,P00234,Fitness Item 1,Sports & Outdoors,Fitness,Brand_D,1,199.99,199.99,15.0,2023-01-19,Credit Card,In-Store,35,Male,Houston,Regular,2023,1,Thursday,Winter
+T000006,C00005,P00298,Skincare Item 1,Health & Beauty,Skincare,Brand_E,2,49.99,99.98,0.0,2023-01-20,Cash,In-Store,29,Female,Phoenix,Budget,2023,1,Friday,Winter
+T000007,C00006,P00367,Snacks Item 1,Food & Beverages,Snacks,Brand_A,4,12.99,51.96,0.0,2023-01-21,Debit Card,Online,41,Male,Philadelphia,Regular,2023,1,Saturday,Winter
+T000008,C00002,P00012,Laptops Item 1,Electronics,Laptops,Brand_B,1,1299.99,1299.99,20.0,2023-01-22,Credit Card,Online,28,Male,Los Angeles,Regular,2023,1,Sunday,Winter
+T000009,C00007,P00067,Womens Wear Item 1,Clothing,Womens Wear,Brand_C,1,129.99,129.99,0.0,2023-01-23,Credit Card,In-Store,33,Female,San Antonio,Premium,2023,1,Monday,Winter
+T000010,C00008,P00134,Furniture Item 1,Home & Garden,Furniture,Brand_D,1,599.99,599.99,25.0,2023-01-24,Credit Card,Online,52,Male,San Diego,Premium,2023,1,Tuesday,Winter
+T000011,C00003,P00178,Educational Item 1,Books & Media,Educational,Brand_E,2,89.99,179.98,0.0,2023-01-25,Debit Card,Online,45,Female,Chicago,Premium,2023,1,Wednesday,Winter
+T000012,C00009,P00245,Outdoor Gear Item 1,Sports & Outdoors,Outdoor Gear,Brand_A,1,349.99,349.99,10.0,2023-01-26,Credit Card,In-Store,38,Male,Dallas,Regular,2023,1,Thursday,Winter
+T000013,C00010,P00312,Makeup Item 1,Health & Beauty,Makeup,Brand_B,3,39.99,119.97,0.0,2023-01-27,Digital Wallet,Online,26,Female,San Jose,Budget,2023,1,Friday,Winter
+T000014,C00004,P00389,Beverages Item 1,Food & Beverages,Beverages,Brand_C,2,8.99,17.98,0.0,2023-01-28,Cash,In-Store,35,Male,Houston,Regular,2023,1,Saturday,Winter
+T000015,C00011,P00023,Tablets Item 1,Electronics,Tablets,Brand_D,1,499.99,499.99,15.0,2023-01-29,Credit Card,Online,42,Female,Austin,Premium,2023,1,Sunday,Winter
+T000016,C00012,P00078,Kids Wear Item 1,Clothing,Kids Wear,Brand_E,2,45.99,91.98,5.0,2023-01-30,Debit Card,In-Store,31,Male,Jacksonville,Regular,2023,1,Monday,Winter
+T000017,C00005,P00145,Decor Item 1,Home & Garden,Decor,Brand_A,1,79.99,79.99,0.0,2023-01-31,Credit Card,Online,29,Female,Phoenix,Budget,2023,1,Tuesday,Winter
+T000018,C00013,P00189,Movies Item 1,Books & Media,Movies,Brand_B,1,19.99,19.99,0.0,2023-02-01,Digital Wallet,Online,27,Male,New York,Budget,2023,2,Wednesday,Winter
+T000019,C00006,P00256,Sports Equipment Item 1,Sports & Outdoors,Sports Equipment,Brand_C,1,249.99,249.99,20.0,2023-02-02,Credit Card,In-Store,41,Male,Philadelphia,Regular,2023,2,Thursday,Winter
+T000020,C00014,P00323,Health Supplements Item 1,Health & Beauty,Health Supplements,Brand_D,2,69.99,139.98,0.0,2023-02-03,Debit Card,Online,48,Female,Los Angeles,Premium,2023,2,Friday,Winter
+T000021,C00007,P00034,Headphones Item 1,Electronics,Headphones,Brand_E,1,199.99,199.99,10.0,2023-02-04,Credit Card,Online,33,Female,San Antonio,Premium,2023,2,Saturday,Winter
+T000022,C00015,P00089,Kitchen Item 1,Home & Garden,Kitchen,Brand_A,1,149.99,149.99,0.0,2023-02-05,Cash,In-Store,36,Male,Chicago,Regular,2023,2,Sunday,Winter
+T000023,C00008,P00167,Non-Fiction Item 1,Books & Media,Non-Fiction,Brand_B,1,34.99,34.99,0.0,2023-02-06,Credit Card,Online,52,Male,San Diego,Premium,2023,2,Monday,Winter
+T000024,C00016,P00234,Fitness Item 1,Sports & Outdoors,Fitness,Brand_C,2,199.99,399.98,15.0,2023-02-07,Debit Card,In-Store,29,Female,Houston,Regular,2023,2,Tuesday,Winter
+T000025,C00009,P00298,Skincare Item 1,Health & Beauty,Skincare,Brand_D,1,49.99,49.99,0.0,2023-02-08,Digital Wallet,Online,38,Male,Dallas,Regular,2023,2,Wednesday,Winter
+T000026,C00017,P00367,Snacks Item 1,Food & Beverages,Snacks,Brand_E,3,12.99,38.97,0.0,2023-02-09,Credit Card,Online,44,Female,Phoenix,Premium,2023,2,Thursday,Winter
+T000027,C00010,P00045,Mens Wear Item 2,Clothing,Mens Wear,Brand_A,1,79.99,79.99,5.0,2023-02-10,Debit Card,In-Store,26,Female,San Jose,Budget,2023,2,Friday,Winter
+T000028,C00018,P00112,Tools Item 1,Home & Garden,Tools,Brand_B,1,89.99,89.99,0.0,2023-02-11,Credit Card,Online,39,Male,Austin,Regular,2023,2,Saturday,Winter
+T000029,C00011,P00178,Educational Item 1,Books & Media,Educational,Brand_C,2,89.99,179.98,10.0,2023-02-12,Credit Card,Online,42,Female,Austin,Premium,2023,2,Sunday,Winter
+T000030,C00019,P00245,Outdoor Gear Item 1,Sports & Outdoors,Outdoor Gear,Brand_D,1,349.99,349.99,0.0,2023-02-13,Cash,In-Store,33,Male,Jacksonville,Regular,2023,2,Monday,Winter
+T000031,C00012,P00312,Makeup Item 1,Health & Beauty,Makeup,Brand_E,2,39.99,79.98,0.0,2023-02-14,Digital Wallet,Online,31,Male,Jacksonville,Regular,2023,2,Tuesday,Winter
+T000032,C00020,P00389,Beverages Item 1,Food & Beverages,Beverages,Brand_A,4,8.99,35.96,0.0,2023-02-15,Debit Card,In-Store,47,Female,New York,Premium,2023,2,Wednesday,Winter
+T000033,C00013,P00056,Cameras Item 1,Electronics,Cameras,Brand_B,1,799.99,799.99,25.0,2023-02-16,Credit Card,Online,27,Male,New York,Budget,2023,2,Thursday,Winter
+T000034,C00021,P00123,Shoes Item 1,Clothing,Shoes,Brand_C,1,119.99,119.99,0.0,2023-02-17,Credit Card,In-Store,35,Female,Los Angeles,Regular,2023,2,Friday,Winter
+T000035,C00014,P00189,Movies Item 1,Books & Media,Movies,Brand_D,3,19.99,59.97,0.0,2023-02-18,Debit Card,Online,48,Female,Los Angeles,Premium,2023,2,Saturday,Winter
+T000036,C00022,P00256,Sports Equipment Item 1,Sports & Outdoors,Sports Equipment,Brand_E,1,249.99,249.99,15.0,2023-02-19,Credit Card,In-Store,41,Male,Chicago,Regular,2023,2,Sunday,Winter
+T000037,C00015,P00323,Health Supplements Item 1,Health & Beauty,Health Supplements,Brand_A,1,69.99,69.99,0.0,2023-02-20,Digital Wallet,Online,36,Male,Chicago,Regular,2023,2,Monday,Winter
+T000038,C00023,P00401,Organic Item 1,Food & Beverages,Organic,Brand_B,2,15.99,31.98,0.0,2023-02-21,Cash,In-Store,29,Female,Houston,Budget,2023,2,Tuesday,Winter
+T000039,C00016,P00067,Gaming Item 1,Electronics,Gaming,Brand_C,1,299.99,299.99,20.0,2023-02-22,Credit Card,Online,29,Female,Houston,Regular,2023,2,Wednesday,Winter
+T000040,C00024,P00134,Furniture Item 1,Home & Garden,Furniture,Brand_D,1,599.99,599.99,0.0,2023-02-23,Credit Card,Online,53,Male,Phoenix,Premium,2023,2,Thursday,Winter
+T000041,C00017,P00201,Music Item 1,Books & Media,Music,Brand_E,2,14.99,29.98,0.0,2023-02-24,Debit Card,In-Store,44,Female,Phoenix,Premium,2023,2,Friday,Winter
+T000042,C00025,P00267,Activewear Item 1,Sports & Outdoors,Activewear,Brand_A,1,89.99,89.99,10.0,2023-02-25,Credit Card,Online,32,Female,Philadelphia,Regular,2023,2,Saturday,Winter
+T000043,C00018,P00334,Personal Care Item 1,Health & Beauty,Personal Care,Brand_B,3,24.99,74.97,0.0,2023-02-26,Digital Wallet,Online,39,Male,Austin,Regular,2023,2,Sunday,Winter
+T000044,C00026,P00412,Frozen Item 1,Food & Beverages,Frozen,Brand_C,2,9.99,19.98,0.0,2023-02-27,Cash,In-Store,37,Male,San Antonio,Budget,2023,2,Monday,Winter
+T000045,C00019,P00078,Kids Wear Item 1,Clothing,Kids Wear,Brand_D,2,45.99,91.98,5.0,2023-02-28,Credit Card,In-Store,33,Male,Jacksonville,Regular,2023,2,Tuesday,Winter
+T000046,C00027,P00145,Decor Item 1,Home & Garden,Decor,Brand_E,1,79.99,79.99,0.0,2023-03-01,Debit Card,Online,28,Female,San Diego,Budget,2023,3,Wednesday,Spring
+T000047,C00020,P00212,Appliances Item 1,Home & Garden,Appliances,Brand_A,1,399.99,399.99,15.0,2023-03-02,Credit Card,Online,47,Female,New York,Premium,2023,3,Thursday,Spring
+T000048,C00028,P00278,Fitness Item 2,Sports & Outdoors,Fitness,Brand_B,1,149.99,149.99,0.0,2023-03-03,Credit Card,In-Store,34,Male,Dallas,Regular,2023,3,Friday,Spring
+T000049,C00021,P00345,Skincare Item 2,Health & Beauty,Skincare,Brand_C,2,59.99,119.98,0.0,2023-03-04,Digital Wallet,Online,35,Female,Los Angeles,Regular,2023,3,Saturday,Spring
+T000050,C00029,P00423,Dairy Item 1,Food & Beverages,Dairy,Brand_D,3,6.99,20.97,0.0,2023-03-05,Cash,In-Store,42,Female,San Jose,Premium,2023,3,Sunday,Spring

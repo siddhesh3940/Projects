@@ -1,0 +1,21 @@
+CustomerID,Product,Category,Quantity,Price,Date,Age,Gender,City
+1,Laptop,Electronics,1,999.99,2023-01-15,25,Male,New York
+2,T-Shirt,Clothing,2,29.99,2023-01-16,32,Female,Los Angeles
+3,Coffee Maker,Appliances,1,79.99,2023-01-17,45,Male,Chicago
+1,Mouse,Electronics,1,25.99,2023-01-18,25,Male,New York
+4,Jeans,Clothing,1,59.99,2023-01-19,28,Female,Houston
+2,Sneakers,Footwear,1,89.99,2023-01-20,32,Female,Los Angeles
+5,Book,Books,3,15.99,2023-01-21,35,Male,Phoenix
+3,Blender,Appliances,1,49.99,2023-01-22,45,Male,Chicago
+6,Smartphone,Electronics,1,699.99,2023-01-23,22,Female,Philadelphia
+1,Headphones,Electronics,1,199.99,2023-01-24,25,Male,New York
+7,Dress,Clothing,1,79.99,2023-01-25,29,Female,San Antonio
+4,Boots,Footwear,1,129.99,2023-01-26,28,Female,Houston
+8,Tablet,Electronics,1,399.99,2023-01-27,31,Male,San Diego
+2,Jacket,Clothing,1,99.99,2023-01-28,32,Female,Los Angeles
+9,Microwave,Appliances,1,149.99,2023-01-29,38,Male,Dallas
+5,Magazine,Books,2,5.99,2023-01-30,35,Male,Phoenix
+10,Watch,Accessories,1,249.99,2023-02-01,27,Female,San Jose
+3,Toaster,Appliances,1,39.99,2023-02-02,45,Male,Chicago
+6,Case,Electronics,1,19.99,2023-02-03,22,Female,Philadelphia
+7,Skirt,Clothing,1,49.99,2023-02-04,29,Female,San Antonio

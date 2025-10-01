@@ -1,0 +1,51 @@
+OrderID,CustomerID,ProductID,ProductName,Category,Brand,Quantity,UnitPrice,TotalAmount,OrderDate,CustomerAge,CustomerGender,CustomerCity,PaymentMethod,ShippingMethod,CustomerSegment,ProductRating,ReviewCount,IsReturned
+ORD001,CUST001,PROD001,iPhone 14 Pro,Electronics,Apple,1,999.99,999.99,2023-01-15,28,Male,New York,Credit Card,Express,Premium,4.5,1250,0
+ORD002,CUST002,PROD002,Nike Air Max,Footwear,Nike,1,129.99,129.99,2023-01-16,32,Female,Los Angeles,PayPal,Standard,Regular,4.2,890,0
+ORD003,CUST003,PROD003,Samsung 4K TV,Electronics,Samsung,1,799.99,799.99,2023-01-17,45,Male,Chicago,Credit Card,Standard,Premium,4.7,2100,0
+ORD004,CUST001,PROD004,Wireless Headphones,Electronics,Sony,2,199.99,399.98,2023-01-18,28,Male,New York,Credit Card,Express,Premium,4.3,567,0
+ORD005,CUST004,PROD005,Yoga Mat,Sports,Lululemon,1,89.99,89.99,2023-01-19,35,Female,Houston,Debit Card,Standard,Regular,4.6,234,0
+ORD006,CUST005,PROD006,Coffee Maker,Appliances,Keurig,1,149.99,149.99,2023-01-20,29,Female,Phoenix,Credit Card,Standard,Budget,4.1,445,1
+ORD007,CUST006,PROD007,Gaming Laptop,Electronics,ASUS,1,1299.99,1299.99,2023-01-21,24,Male,Philadelphia,Credit Card,Express,Premium,4.4,678,0
+ORD008,CUST002,PROD008,Skincare Set,Beauty,Olay,1,79.99,79.99,2023-01-22,32,Female,Los Angeles,PayPal,Standard,Regular,4.0,123,0
+ORD009,CUST007,PROD009,Bluetooth Speaker,Electronics,JBL,1,99.99,99.99,2023-01-23,38,Male,San Antonio,Credit Card,Standard,Regular,4.5,789,0
+ORD010,CUST008,PROD010,Running Shoes,Footwear,Adidas,1,119.99,119.99,2023-01-24,26,Female,San Diego,Debit Card,Express,Budget,4.3,456,0
+ORD011,CUST003,PROD011,Smart Watch,Electronics,Apple,1,399.99,399.99,2023-01-25,45,Male,Chicago,Credit Card,Express,Premium,4.6,1890,0
+ORD012,CUST009,PROD012,Protein Powder,Health,Optimum,2,49.99,99.98,2023-01-26,31,Male,Dallas,Credit Card,Standard,Regular,4.2,334,0
+ORD013,CUST010,PROD013,Handbag,Fashion,Coach,1,299.99,299.99,2023-01-27,42,Female,Austin,Credit Card,Express,Premium,4.7,567,0
+ORD014,CUST004,PROD014,Kitchen Knife Set,Kitchen,Henckels,1,199.99,199.99,2023-01-28,35,Female,Houston,Debit Card,Standard,Regular,4.5,234,0
+ORD015,CUST011,PROD015,Board Game,Toys,Hasbro,1,39.99,39.99,2023-01-29,33,Male,Jacksonville,PayPal,Standard,Budget,4.1,123,0
+ORD016,CUST005,PROD016,Vacuum Cleaner,Appliances,Dyson,1,399.99,399.99,2023-01-30,29,Female,Phoenix,Credit Card,Standard,Budget,4.8,890,0
+ORD017,CUST012,PROD017,Tablet,Electronics,iPad,1,329.99,329.99,2023-01-31,27,Female,Seattle,Credit Card,Express,Regular,4.4,1234,0
+ORD018,CUST006,PROD018,Gaming Mouse,Electronics,Logitech,1,79.99,79.99,2023-02-01,24,Male,Philadelphia,Credit Card,Standard,Premium,4.3,345,0
+ORD019,CUST013,PROD019,Dress,Fashion,Zara,2,89.99,179.98,2023-02-02,30,Female,Miami,PayPal,Standard,Regular,4.0,156,1
+ORD020,CUST007,PROD020,Camping Tent,Outdoor,Coleman,1,199.99,199.99,2023-02-03,38,Male,San Antonio,Credit Card,Standard,Regular,4.6,445,0
+ORD021,CUST014,PROD021,Baby Stroller,Baby,Graco,1,249.99,249.99,2023-02-04,34,Female,Denver,Credit Card,Express,Premium,4.5,678,0
+ORD022,CUST008,PROD022,Sunglasses,Fashion,Ray-Ban,1,149.99,149.99,2023-02-05,26,Female,San Diego,Debit Card,Standard,Budget,4.2,234,0
+ORD023,CUST015,PROD023,Power Bank,Electronics,Anker,2,29.99,59.98,2023-02-06,25,Male,Portland,PayPal,Standard,Budget,4.4,567,0
+ORD024,CUST009,PROD024,Resistance Bands,Fitness,TRX,1,49.99,49.99,2023-02-07,31,Male,Dallas,Credit Card,Standard,Regular,4.1,123,0
+ORD025,CUST016,PROD025,Air Fryer,Appliances,Ninja,1,129.99,129.99,2023-02-08,39,Female,Boston,Credit Card,Standard,Regular,4.7,890,0
+ORD026,CUST010,PROD026,Perfume,Beauty,Chanel,1,199.99,199.99,2023-02-09,42,Female,Austin,Credit Card,Express,Premium,4.3,345,0
+ORD027,CUST017,PROD027,Car Phone Mount,Auto,iOttie,1,24.99,24.99,2023-02-10,36,Male,Las Vegas,PayPal,Standard,Budget,4.0,156,0
+ORD028,CUST011,PROD028,Puzzle,Toys,Ravensburger,1,19.99,19.99,2023-02-11,33,Male,Jacksonville,PayPal,Standard,Budget,4.5,234,0
+ORD029,CUST018,PROD029,Wireless Charger,Electronics,Samsung,1,39.99,39.99,2023-02-12,28,Female,Atlanta,Credit Card,Standard,Regular,4.2,445,0
+ORD030,CUST012,PROD030,Backpack,Fashion,North Face,1,89.99,89.99,2023-02-13,27,Female,Seattle,Credit Card,Standard,Regular,4.6,678,0
+ORD031,CUST019,PROD031,Electric Toothbrush,Health,Oral-B,1,99.99,99.99,2023-02-14,41,Male,Minneapolis,Credit Card,Standard,Premium,4.4,567,0
+ORD032,CUST013,PROD032,Jeans,Fashion,Levis,1,79.99,79.99,2023-02-15,30,Female,Miami,PayPal,Standard,Regular,4.1,234,0
+ORD033,CUST020,PROD033,Desk Lamp,Home,Philips,1,59.99,59.99,2023-02-16,35,Male,Tampa,Credit Card,Standard,Budget,4.3,123,0
+ORD034,CUST014,PROD034,Baby Monitor,Baby,Motorola,1,179.99,179.99,2023-02-17,34,Female,Denver,Credit Card,Express,Premium,4.7,345,0
+ORD035,CUST021,PROD035,Cookbook,Books,Williams Sonoma,1,29.99,29.99,2023-02-18,43,Female,Nashville,PayPal,Standard,Regular,4.0,156,0
+ORD036,CUST015,PROD036,Phone Case,Electronics,OtterBox,1,49.99,49.99,2023-02-19,25,Male,Portland,PayPal,Standard,Budget,4.5,890,0
+ORD037,CUST022,PROD037,Wine Glasses,Home,Riedel,4,24.99,99.96,2023-02-20,48,Male,San Francisco,Credit Card,Standard,Premium,4.2,234,0
+ORD038,CUST016,PROD038,Blender,Appliances,Vitamix,1,299.99,299.99,2023-02-21,39,Female,Boston,Credit Card,Standard,Regular,4.8,567,0
+ORD039,CUST023,PROD039,Dog Toy,Pet,Kong,3,12.99,38.97,2023-02-22,32,Male,Columbus,PayPal,Standard,Budget,4.1,123,0
+ORD040,CUST017,PROD040,Car Charger,Auto,Belkin,1,19.99,19.99,2023-02-23,36,Male,Las Vegas,PayPal,Standard,Budget,4.3,345,0
+ORD041,CUST024,PROD041,Moisturizer,Beauty,Neutrogena,2,19.99,39.98,2023-02-24,29,Female,Charlotte,Credit Card,Standard,Regular,4.0,456,0
+ORD042,CUST018,PROD042,Keyboard,Electronics,Mechanical,1,149.99,149.99,2023-02-25,28,Female,Atlanta,Credit Card,Standard,Regular,4.6,678,0
+ORD043,CUST025,PROD043,Hiking Boots,Footwear,Merrell,1,179.99,179.99,2023-02-26,37,Male,Salt Lake City,Credit Card,Express,Regular,4.4,234,0
+ORD044,CUST019,PROD044,Multivitamin,Health,Centrum,1,24.99,24.99,2023-02-27,41,Male,Minneapolis,Credit Card,Standard,Premium,4.2,567,0
+ORD045,CUST026,PROD045,Throw Pillow,Home,West Elm,2,39.99,79.98,2023-02-28,33,Female,Kansas City,PayPal,Standard,Budget,4.1,123,0
+ORD046,CUST020,PROD046,Monitor,Electronics,Dell,1,299.99,299.99,2023-03-01,35,Male,Tampa,Credit Card,Standard,Budget,4.5,890,0
+ORD047,CUST027,PROD047,Lipstick,Beauty,MAC,1,29.99,29.99,2023-03-02,26,Female,Orlando,Credit Card,Standard,Regular,4.3,345,0
+ORD048,CUST021,PROD048,Cutting Board,Kitchen,Bamboo,1,34.99,34.99,2023-03-03,43,Female,Nashville,PayPal,Standard,Regular,4.0,156,0
+ORD049,CUST028,PROD049,Fitness Tracker,Electronics,Fitbit,1,199.99,199.99,2023-03-04,31,Male,Louisville,Credit Card,Standard,Regular,4.7,1234,0
+ORD050,CUST022,PROD050,Wine Opener,Home,Rabbit,1,49.99,49.99,2023-03-05,48,Male,San Francisco,Credit Card,Standard,Premium,4.2,234,0

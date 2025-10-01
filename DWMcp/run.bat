@@ -1,0 +1,6 @@
+@echo off
+echo Installing dependencies...
+pip install -r requirements.txt
+
+echo Starting Retail Analytics Web App...
+streamlit run app.py
